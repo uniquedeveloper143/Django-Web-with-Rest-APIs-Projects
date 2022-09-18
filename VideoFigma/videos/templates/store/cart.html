@@ -1,0 +1,100 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+
+{% load  cart %}
+{% load  custom_filter %}
+
+<div class="container">
+    <div class="border rounded p-4 m-4">
+        <p class="display-4" style="text-align:center;">Cart Details</p><hr/>
+        {% comment %} {{products}} {% endcomment %}
+        {% if products %}
+
+        <table class="table" style="text-align:center;">
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                    {% for p in products %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td><img height="80px" class="rounded-circle" src="{{ p.image.url }}"></td>
+                        <td>{{p.name}}</td>
+                        <td>{{p.price|rupees}}</td>
+                        <td>{{p|cart_qty:request.session.cart}}</td>
+                        <td>{{p|total:request.session.cart|rupees}}</td>
+                    </tr>
+                    {% endfor %}
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th colspan="4">Total Amount :</th>
+                    <th>{{products|total_price:request.session.cart|rupees}}</th>
+                </tr>
+            </tfoot>
+
+        </table>
+
+        <div class="m-3 p-3" style="text-align:center;">
+            <a href="#" data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-info border rounded col-lg-4 btn-danger">Check Out</a>
+        </div>
+        {% else %}
+            <p class="display-6" style="text-align:center;">No Records Founds Please Add to Carts !!</p><hr/>
+        {% endif %}
+    </div>
+</div>
+
+<!--Model-->
+<!-- Button trigger modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Check Out Cart</h5><hr/>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="m-2 p-3">
+            <form action="/check-out" method="POST">
+                {% csrf_token %}
+
+                <div class="form-group">
+                  <label for="address">Address</label>
+                  <div class="form-group">
+                  <select class="form-control" id="address" name="address">
+                  {% for ad in add %}
+                          <option>{{ad.address}}</option>
+                  {% endfor %}
+                  </select>
+                </div>
+
+                </div>
+                 <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input type="text" name="phone" id="phone" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <input type="submit" class="btn btn-outline-info col-lg-6" value="Order Placed">
+            </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

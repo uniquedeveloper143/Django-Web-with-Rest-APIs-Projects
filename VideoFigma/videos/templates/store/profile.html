@@ -1,0 +1,52 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="p-4 m-4">
+        <div class="col-lg-6 mx-auto border rounded p-4">
+            <h3 class="alert alert-light border rounded">Add Profile</h3>
+            <form action="update_profile" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endif %}
+              <div class="form-group">
+                  {% for values in customer %}
+                <label for="f_name">First Name</label>
+                <input type="text" class="form-control" id="f_name" placeholder="First Name" name="f_name" value="{{values.f_name}}">
+              </div>
+                <br/>
+              <div class="form-group">
+                <label for="l_name">Last Name</label>
+                <input type="text" class="form-control" id="l_name" placeholder="Last Name" name="l_name"value="{{values.l_name}}">
+              </div>
+                 <br/>
+              <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="text" class="form-control" id="email" placeholder="Email ID" name="email" value="{{values.email}}">
+              </div><br/>
+<!--             <div class="form-group">-->
+<!--                <label for="image">Image</label>-->
+<!--                <input type="file" class="form-control" id="image"  name="image" value="{{values.l_name}}">-->
+<!--              </div>-->
+                {% endfor %}
+                 <br/>
+              <div class="form-group">
+                <input type="submit" class="form-control btn-sm btn btn-info" id="sub" onclick="update()" name="sub" value="Update Profile">
+              </div>
+
+                   <script  type="text/javascript">
+                        function update() {
+                             alert("Profile Updated Successfully!!");
+                            }
+                   </script>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

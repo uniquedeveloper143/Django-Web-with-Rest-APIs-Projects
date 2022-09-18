@@ -1,0 +1,300 @@
+{% extends 'custom_auth/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="container" style="text-align:center;">
+
+                    {% ifequal category_id  1 %}
+                        <div class="row mx-auto mt-4">
+                           <h1>Posts Details</h1>
+                            {% for audio in post %}
+                                <div class="col-sm-12">
+                                  <div  id={{audio.id}} style="width: 100%; height:500px;">
+                                     <img class="" src="{{audio.post_image.url}}" style="width: 60%; height:500px;" alt="dress"><br/><br/>
+
+                                        <video height="100" width="50%"  controls>
+                                          <source src="{{audio.post_media.url}}" type="video/mp4" />
+                                        </video><br/>
+                                      <br/>
+                                          <h5 class="card-title mt-2 text-primary">{{ audio.post_name }}</h5><br/>
+                                          <input type="hidden"   name="post_id" class="post_id" value="{{audio.id}}">
+                                          <div class="container " style="width: 50%; ">{{ audio.description }}</div>
+                                  </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endifequal %}
+
+                        {% ifequal category_id  2 %}
+                        <div class="row mx-auto">
+                           <h1>Posts Details</h1>
+                            {% for video in post %}
+                                <div class="col-sm-12">
+                                  <div  id={{video.id}} style="width: 100%; height:500px;">
+                                      <a href="./post_details?post={{video.id}}">
+                                          <video height="600"  controls>
+                                          <source src="{{video.post_media.url}}" type="video/mp4" />
+                                          </video><br/>
+        <!--                                           <img class="" src="{{post.post_image.url}}" style="width: 50%; height:500px;" alt="dress"><br/>-->
+                                      </a><br/>
+                                          <h5 class="card-title mt-2 text-primary">{{ video.post_name }}</h5><br/>
+                                            <input type="hidden"   name="post_id" class="post_id" value="{{video.id}}">
+                                          <div class="container " style="width: 50%; height:500px;">{{ video.description }}</div>
+                                  </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endifequal %}
+
+                    {% ifequal category_id  3 %}
+                        <div class="row mx-auto">
+                           <h1>Posts Details</h1>
+                            {% for post in post %}
+                                <div class="col-sm-12">
+                                  <div  id={{post.id}} style="width: 100%; height:500px;">
+                                      <a href="./post_details?post={{post.id}}">
+                                           <img class="" src="{{post.post_image.url}}" style="width: 50%; height:500px;" alt="dress"><br/>
+                                      </a><br/>
+                                          <h5 class="card-title mt-2 text-primary">{{ post.post_name }}</h5><br/>
+                                          <input type="hidden"   name="post_id" class="post_id" value="{{post.id}}">
+                                          <div class="container " style="width: 50%; height:500px;">{{ post.description }}</div>
+                                  </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endifequal %}
+
+        <div style="margin-top:350px">
+<!--            <div class="row mx-auto mt-4">-->
+<!--                    <div class="col-sm-3">Index</div>-->
+<!--                <div class="col-sm-3">Comments</div>-->
+<!--                <div class="col-sm-3"></div>-->
+<!--                <div class="col-sm-3">Share</div>-->
+
+<!--            </div>-->
+
+                <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+                    <div class="container bootdey">
+                    <div class="col-md-12 bootstrap snippets">
+                    <div class="panel">
+                      <div class="panel-body">
+
+<!--                        <form action="{% url 'web_auth:set_comment' %}"  method="POST">-->
+<!--                            {% csrf_token %}-->
+                            <textarea class="form-control" rows="2" id="message" placeholder="What are you thinking?"></textarea>
+                            <input type="hidden"   name="user" id="user" value="{{request.user.id}}">
+                            <div class="mar-top clearfix">
+                              <button class="btn btn-sm btn-primary pull-right mt-2" type="submit"><i class="fa fa-pencil fa-fw"></i> Share</button>
+                              <button class="btn btn-sm btn-primary pull-left mt-2 total_comments"><i class="fa fa-comment fa-fw"></i> {{ total_comments }}</button>
+                              <button class="btn btn-sm btn-primary pull-middle mt-2" id="comment"><i class="fa fa-comment fa-fw"></i> Comment</button>
+                              <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href=""></a>
+                              <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href=""></a>
+                              <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href=""></a>
+                            </div>
+<!--                        </form>-->
+
+                      </div>
+
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                        <!-- Newsfeed Content -->
+                        <!--===================================================-->
+                             {%for com in comment%}
+                        <div class="media-block ">
+                          <a class="media-left " href="#"><img height="50" width="50" class="img-circle img-sm border rounded" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
+                          <div class="media-body">
+                            <div class="mar-btm">
+                                <input type="hidden"   name="com_id" id="com_id" value="{{com.id}}">
+<!--                              <a href="#" class="btn-link text-semibold media-heading box-inline">{{com.user.username}}</a>-->
+                              {% if com.user.name %}
+                                <h5>{{com.user.name}}</h5>
+                              {% else %}
+                                <h5> {{com.user.username}}</h5>
+                              {% endif %}
+
+                            </div>
+                            <p>{{com.message}}</p>
+                            <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> {{com.created.time}}</p>
+                            <div class="pad-ver">
+                              <div class="btn-group">
+
+                                    <a class="btn btn-sm btn-default btn-hover-success like" ><i class="fa fa-thumbs-up"></i> {{ com.comment_like.all|length}}</a>
+                                    <a class="btn btn-sm btn-default btn-hover-danger dislike" ><i class="fa fa-thumbs-down"> {{ com.comment_dislike.all|length}} </i></a>
+
+                              </div>
+
+                              <button class="btn btn-sm btn-default btn-hover-primary reply_com" id="reply">Reply {{com.comment_reply.all|length}}</button>
+                                <input type="hidden"   name="comment_id" class="comment_id" value="{{com.id}}">
+                                <input type="hidden"   name="post_id" class="post_id" value="{{com.post.id}}">
+                                <textarea class="form-control reply_text" rows="2" id="reply_text" placeholder="What are you thinking?"></textarea>
+                                <button class="btn btn-sm btn-primary pull-middle mt-2 reply_btn" id="reply_btn"><i class="fa fa-comment fa-fw"></i> Reply</button>
+
+                            </div>
+                            <hr>
+
+                            <!-- Comments -->
+                              {%for rep in com.comment_reply.all%}
+                            <div>
+                              <div class="media-block">
+                                <a class="media-left " href="#"><img height="50" width="50" class="img-circle img-sm border rounded" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar2.png"></a>
+                                <div class="media-body">
+                                  <div class="mar-btm">
+<!--                                    <a href="#" class="btn-link text-semibold media-heading box-inline">{{rep.user.name}}</a>-->
+                                      {% if rep.user.name %}
+                                        <h5>{{rep.user.name}}</h5>
+                                      {% else %}
+                                        <h5> {{rep.user.username}}</h5>
+                                      {% endif %}
+
+                                  </div>
+                                  <p>{{rep.message}}</p>
+                                  <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> {{rep.created.time}}</p>
+                                  <div class="pad-ver">
+                                    <div class="btn-group">
+                                      <a class="btn btn-sm btn-default btn-hover-success active"><i class="fa fa-thumbs-up"></i> You Like it</a>
+                                      <a class="btn btn-sm btn-default btn-hover-danger" ><i class="fa fa-thumbs-down"></i></a>
+                                    </div>
+                                    <a class="btn btn-sm btn-default btn-hover-primary" >Reply {{ rep|length }}</a>
+                                  </div>
+                                  <hr>
+                                </div>
+                              </div>
+
+
+                            </div>
+                              {%endfor%}
+                          </div>
+                        </div>
+
+                            {%endfor%}
+
+        </div>
+</div>
+                    </div></div></div>
+
+
+<script>
+
+$(document).ready(function(){
+
+      $("#comment").click(function(){
+
+            var post_id = $(".post_id").val();
+            var message = $("#message").val();
+            var user = $("#user").val();
+
+            if (message=="")
+                {
+                    alert("Please enter data in the Comment textbox!!")
+                }
+            else
+            {
+            $.ajax({
+                method: "POST",
+                url: "{% url 'web_auth:set_comment' %}",
+                data: {
+                    'post_id': post_id,
+                    'message': message,
+                    'user': user,
+                    csrfmiddlewaretoken: '{{csrf_token}}'
+                }
+            });
+            alert("Comment Successfully!")
+            }
+      });
+
+
+        $(".reply_btn").hide();
+        $(".reply_text").hide();
+        $(".media-block ").hide();
+
+         $(".total_comments").click(function(){
+             $(".media-block ").toggle();
+         });
+
+         $(".panel").on("click",".reply_com",function()
+                {
+                    $(this).closest(".media-block").find(".reply_btn").toggle();
+                    $(this).closest(".media-block").find(".reply_text").toggle();
+
+                });
+
+
+         $(".reply_btn").click(function(){
+              var comment_id = $(this).closest(".media-block").find(".comment_id").val();
+              var rep_message = $(this).closest(".media-block").find(".reply_text").val();
+              var user = $("#user").val();
+
+             if (rep_message=="")
+                {
+                    alert("Please enter data in the Reply textbox!!")
+                }
+             else
+                {
+                 $.ajax({
+                    method: "POST",
+                    url: "{% url 'web_auth:reply_comment' %}",
+                    data: {
+                            'comment_id': comment_id,
+                            'rep_message': rep_message,
+                            'user': user,
+                            csrfmiddlewaretoken: '{{csrf_token}}'
+                        }
+                    });
+
+                  alert("Reply Successfully!")
+                 }
+         });
+
+
+        $(".like").click(function(){
+              var flag = '0';
+              var comment_id = $(this).closest(".media-block").find(".comment_id").val();
+              var post_id = $(this).closest(".media-block").find(".post_id").val();
+              var user = $("#user").val();
+
+              $.ajax({
+                method: "POST",
+                url: "{% url 'web_auth:like_comment' %}",
+                data: {
+                        'comment_id': comment_id,
+                        'post_id': post_id,
+                        'user': user,
+                        'flag': flag,
+                        csrfmiddlewaretoken: '{{csrf_token}}'
+                    }
+                });
+
+              alert("Liked Successfully!")
+
+        });
+
+        $(".dislike").click(function(){
+              var flag = '1';
+              var comment_id = $(this).closest(".media-block").find(".comment_id").val();
+              var post_id = $(this).closest(".media-block").find(".post_id").val();
+              var user = $("#user").val();
+
+              $.ajax({
+                method: "POST",
+                url: "{% url 'web_auth:like_comment' %}",
+                data: {
+                        'comment_id': comment_id,
+                        'post_id': post_id,
+                        'user': user,
+                        'flag': flag,
+                        csrfmiddlewaretoken: '{{csrf_token}}'
+                    }
+                });
+
+             alert("You disliked this comments")
+        });
+
+});
+</script>
+
+{% endblock %}
+
+</div>

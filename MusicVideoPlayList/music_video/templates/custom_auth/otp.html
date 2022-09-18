@@ -1,0 +1,38 @@
+{% extends 'custom_auth/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="p-4 m-4">
+        <div class="col-lg-6 mx-auto border rounded p-4">
+            <h3 class="alert alert-light border rounded ">OTP Verify</h3>
+            <form action="otp_verify" method="POST">
+                {% csrf_token %}
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endif %}
+              <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="text" class="form-control" id="email" placeholder="Email ID" name="phone" value="{{phone}}" readonly>
+              </div>
+                 <br/>
+              <div class="form-group">
+                <label for="OTP">OTP</label>
+                <input type="text" class="form-control" id="OTP" placeholder="****" name="OTP" >
+              </div>
+              <input type="hidden"   name="email" value="{{email}}">
+              <input type="hidden"  name="password" value="{{password}}">
+              <input type="hidden"  name="name" value="{{name}}">
+<!--              <input type="hidden"  name="phone" value="{{phone}}">-->
+                 <br/>
+              <div class="form-group">
+                <input type="submit" class="form-control btn-sm btn btn-info" id="sub" name="sub" value="Click to Verify ">
+              </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

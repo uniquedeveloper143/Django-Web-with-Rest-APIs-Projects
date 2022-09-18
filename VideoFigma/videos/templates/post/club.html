@@ -1,0 +1,980 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Music</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+   <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+  <title>Div in table</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	 <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+	 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+	 <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here" rel="stylesheet">
+
+	 
+       
+       
+     <script type="text/javascript"  src="js/jquery-2.1.1.min.js"></script>
+     <script  type="text/javascript" src="js/bootstrap.min.js"></script>
+	
+    
+ 
+</head>
+<body>
+  <section id="header"  class="cd-secondary-nav header_new">
+	<nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+				<a class="navbar-brand" href="index.html">EUPHONY</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="longer_1"><a href="">Log in</a></li>
+					<li class="dropdown longer_1">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Sign in</b> <span class="caret"></span></a>
+			<ul id="login-dp" class="dropdown-menu">
+				<li>
+					 <div class="row">
+							<div class="col-md-12">
+								Login via
+								<div class="social-buttons">
+									<a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+								</div>
+                                or
+								 <form class="form" role="form" method="post" action="http://bootsnipp-env.elasticbeanstalk.com/iframe/login" accept-charset="UTF-8" id="login-nav">
+										<div class="form-group">
+											 <label class="sr-only" for="exampleInputEmail2">Email address</label>
+											 <input type="email" class="form-control form-control_1" id="exampleInputEmail2" placeholder="Email address" required="">
+										</div>
+										<div class="form-group">
+											 <label class="sr-only" for="exampleInputPassword2">Password</label>
+											 <input type="password" class="form-control form-control_1" id="exampleInputPassword2" placeholder="Password" required="">
+                                             <div class="help-block text-right"><a href="#">Forget the password ?</a></div>
+										</div>
+										<div class="form-group">
+											 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+										</div>
+										<div class="checkbox">
+											 <label>
+											 <input type="checkbox"> keep me logged-in
+											 </label>
+										</div>
+								 </form>
+							</div>
+							<div class="bottom text-center">
+								New here ? <a href="#"><b>Join Us</b></a>
+							</div>
+					 </div>
+				</li>
+			</ul>
+        </li> 
+					
+                </ul>
+				 <ul class="nav navbar-nav navbar-right">
+				  <li>
+                        <a class="tag_menu" href="index.html">HOME</a>
+                    </li>
+                     
+                    <li>
+                        <a class="tag_menu" href="news.html">ABOUT US</a>
+                    </li>
+					
+					<li>
+                        <a class="tag_menu active_tab" href="club.html">CLUB</a>
+                    </li>
+                    <li>
+                        <a class="tag_menu" href="shop.html">GALLERY</a>
+                    </li>
+					
+					<li>
+                        <a class="tag_menu" href="pages.html">PAGES</a>
+                    </li>
+					<li>
+                        <a class="tag_menu" href="contact.html">CONTACT</a>
+                    </li>
+					
+					<li class="dropdown">
+					  <a class="tag_menu" href="blog.html" data-toggle="dropdown" role="button" aria-expanded="false">MORE<span class="caret"></span></a>
+					  <ul class="dropdown-menu drop_1" role="menu">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="news.html">Blogpost</a></li>
+						<li><a href="club.html">CLUB</a></li>
+						<li><a href="shop.html">Gallery</a></li>
+					  </ul>
+                    </li>
+				 </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</section>
+
+  <section id="club" class="clearfix">
+  <div class="club clearfix">
+  </div>
+  </section>
+  
+  <section id="club_main" class="clearfix">
+   <div class="container">
+    <div class="row">
+	 <div class="club_main clearfix">
+	  <div class="col-sm-6 club_main_left clearfix">
+	   <div class="club_main_left_inner">
+	    <div class="join_club_2_right_inner">
+		 <p class="text-center signature_1"><a href="#" class="btn btn-primary btn-lg signature" role="button" data-toggle="modal" data-target="#login-modal">SIGN UP</a></p>
+		 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header" align="center">
+					<img class="img-circle" id="img_logo" src="img/30.jpg">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
+				</div>
+                
+                <!-- Begin # DIV Form -->
+                <div id="div-forms">
+                
+                    <!-- Begin # Login Form -->
+                    <form id="login-form">
+		                <div class="modal-body">
+				    		<div id="div-login-msg">
+                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-login-msg">Type your username and password.</span>
+                            </div>
+				    		<input id="login_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required="">
+				    		<input id="login_password" class="form-control" type="password" placeholder="Password" required="">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                            </div>
+        		    	</div>
+				        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                            </div>
+				    	    <div>
+                                <button id="login_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+                                <button id="login_register_btn" type="button" class="btn btn-link">Register</button>
+                            </div>
+				        </div>
+                    </form>
+                    <!-- End # Login Form -->
+                    
+                    <!-- Begin | Lost Password Form -->
+                    <form id="lost-form" style="display:none;">
+    	    		    <div class="modal-body">
+		    				<div id="div-lost-msg">
+                                <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-lost-msg">Type your e-mail.</span>
+                            </div>
+		    				<input id="lost_email" class="form-control" type="text" placeholder="E-Mail (type ERROR for error effect)" required="">
+            			</div>
+		    		    <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+                            </div>
+                            <div>
+                                <button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
+                                <button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
+                            </div>
+		    		    </div>
+                    </form>
+                    <!-- End | Lost Password Form -->
+                    
+                    <!-- Begin | Register Form -->
+                    <form id="register-form" style="display:none;">
+            		    <div class="modal-body">
+		    				<div id="div-register-msg">
+                                <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-register-msg">Register an account.</span>
+                            </div>
+		    				<input id="register_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required="">
+                            <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required="">
+                            <input id="register_password" class="form-control" type="password" placeholder="Password" required="">
+            			</div>
+		    		    <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                            </div>
+                            <div>
+                                <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+                                <button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+                            </div>
+		    		    </div>
+                    </form>
+                    <!-- End | Register Form -->
+                    
+                </div>
+                <!-- End # DIV Form -->
+                
+			</div>
+		</div>
+	</div>
+		</div>
+	   </div>
+	  </div>
+	  <div class="col-sm-6 club_main_right clearfix">
+	   <div class="join_club_2_right_inner">
+		 <p class="text-center signature_1"><a href="#" class="btn btn-primary btn-lg signature_2" role="button" data-toggle="modal" data-target="#login-modal">already a member? log in</a></p>
+		 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header" align="center">
+					<img class="img-circle" id="img_logo" src="img/30.jpg">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
+				</div>
+                
+                <!-- Begin # DIV Form -->
+                <div id="div-forms">
+                
+                    <!-- Begin # Login Form -->
+                    <form id="login-form">
+		                <div class="modal-body">
+				    		<div id="div-login-msg">
+                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-login-msg">Type your username and password.</span>
+                            </div>
+				    		<input id="login_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required="">
+				    		<input id="login_password" class="form-control" type="password" placeholder="Password" required="">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                            </div>
+        		    	</div>
+				        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                            </div>
+				    	    <div>
+                                <button id="login_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+                                <button id="login_register_btn" type="button" class="btn btn-link">Register</button>
+                            </div>
+				        </div>
+                    </form>
+                    <!-- End # Login Form -->
+                    
+                    <!-- Begin | Lost Password Form -->
+                    <form id="lost-form" style="display:none;">
+    	    		    <div class="modal-body">
+		    				<div id="div-lost-msg">
+                                <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-lost-msg">Type your e-mail.</span>
+                            </div>
+		    				<input id="lost_email" class="form-control" type="text" placeholder="E-Mail (type ERROR for error effect)" required="">
+            			</div>
+		    		    <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+                            </div>
+                            <div>
+                                <button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
+                                <button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
+                            </div>
+		    		    </div>
+                    </form>
+                    <!-- End | Lost Password Form -->
+                    
+                    <!-- Begin | Register Form -->
+                    <form id="register-form" style="display:none;">
+            		    <div class="modal-body">
+		    				<div id="div-register-msg">
+                                <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-register-msg">Register an account.</span>
+                            </div>
+		    				<input id="register_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required="">
+                            <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required="">
+                            <input id="register_password" class="form-control" type="password" placeholder="Password" required="">
+            			</div>
+		    		    <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                            </div>
+                            <div>
+                                <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+                                <button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+                            </div>
+		    		    </div>
+                    </form>
+                    <!-- End | Register Form -->
+                    
+                </div>
+                <!-- End # DIV Form -->
+                
+			</div>
+		</div>
+	</div>
+		</div>
+	  </div>
+	 </div>
+	</div>
+   </div>
+  </section>
+  
+  <section id="clubbers" class="clearfix">
+   <div class="container">
+    <div class="row">
+	 <div class="clubbers clearfix">
+	   <h2> < DUIS SAGITTIS ! > </h2>
+	   <h6><a href="#">NULLA QUIS SEM AT NEC! ARCU NOW!</a></h6>
+	   <p>Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos C. Curabitursodales ligula in libero.</p>
+	   <p>Consectetur adipiscing elit. Integer nec odionec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos C. Curabitursodales ligula in libero. Sed dignissim lacinia nunc.ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis arcu!
+</p>
+       <p>Vestibulum lacinia arcu eget nulla.Class aptent taciti sociosqu:</p>
+	   <h5>ELEMENTUM CONUBIA</h5>
+	   <p>Ipsum Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.Class aptent taciti sociosqu ad litora torquent conubia.
+</p>
+       <h5>ELEMENTUM  DUISSAGITTIS</h5>
+	   <p>Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.</p>
+	   <h5>DISCOUNTS ON APRIL</h5>
+	   <p><a href="#">Sign up </a>now for FREE and become the Seventh Member of Euphony now!</p>
+	 </div>
+	</div>
+   </div>
+  </section>
+  
+  <section id="stream" class="clearfix">
+   <div class="container">
+    <div class="row">
+	 <div class="stream clearfix">
+	  <div class="col-sm-9 stream_left clearfix">
+	   <div class="stream_left_inner">
+	    <h2><a href="#"><i class="fa fa-star"></i>EXCLUSIVES</a></h2>
+	   </div>
+	  </div>
+	  <div class="col-sm-3 stream_right clearfix">
+	   <div class="stream_right_inner">
+	    <h5><a href="#">view all <i class="fa fa-arrow-circle-right"></i></a></h5>
+	   </div>
+	  </div>
+	 </div>
+	</div>
+   </div>
+  </section>
+  
+  <section id="center_8" class="clearfix">
+   <div class="container">
+    <div class="row">
+	 <div class="center_8 clearfix">
+	  <div class="center_4 clearfix">
+	  <div class="col-sm-3 center_4_left clearfix">
+	   <div class="center_4_left_inner_1">
+	    <div class="grid clearfix">
+					<figure class="effect-chico">
+						<img src="img/26.jpg" alt="img15">
+						<figcaption>
+							
+							<a href="#">View more</a>						</figcaption>			
+		  </figure>
+					
+	  </div>
+	   </div>
+	   <div class="center_4_left_inner_2">
+	    <h2><a href="#">VESTIBULUM LACINIA ARCU EGET NULLA: DIGNISSIM</a></h2>
+		<h5>July 18, 2017</h5>
+	   </div>
+	  </div>
+	  <div class="col-sm-3 center_4_left clearfix">
+	   <div class="center_4_left_inner_1">
+	    <div class="grid clearfix">
+					<figure class="effect-chico">
+						<img src="img/27.jpg" alt="img15">
+						<figcaption>
+							
+							<a href="#">View more</a>						</figcaption>			
+		  </figure>
+					
+	  </div>
+	   </div>
+	   <div class="center_4_left_inner_2">
+	    <h2><a href="#">IPSUM DOLOR SIT AMET, CONSECTETUR: IMPERDIET</a></h2>
+		<h5>April 19, 2018</h5>
+	   </div>
+	  </div>
+	  <div class="col-sm-3 center_4_left clearfix">
+	   <div class="center_4_left_inner_1">
+	    <div class="grid clearfix">
+					<figure class="effect-chico">
+						<img src="img/28.jpg" alt="img15">
+						<figcaption>
+							
+							<a href="#">View more</a>						</figcaption>			
+		  </figure>
+					
+	  </div>
+	   </div>
+	   <div class="center_4_left_inner_2">
+	    <h2><a href="#">VESTIBULUM LACINIA ARCU EGET NULLA: DIGNISSIM</a></h2>
+		<h5>July 18, 2017</h5>
+	   </div>
+	  </div>
+	  <div class="col-sm-3 center_4_left clearfix">
+	   <div class="center_4_left_inner_1">
+	    <div class="grid clearfix">
+					<figure class="effect-chico">
+						<img src="img/29.jpg" alt="img15">
+						<figcaption>
+							
+							<a href="#">View more</a>						</figcaption>			
+		  </figure>
+					
+	  </div>
+	   </div>
+	   <div class="center_4_left_inner_2">
+	    <h2><a href="#">IPSUM DOLOR SIT AMET, CONSECTETUR: IMPERDIET</a></h2>
+		<h5>April 19, 2018</h5>
+	   </div>
+	  </div>
+	 </div>
+	 </div>
+	</div>
+   </div>
+  </section>
+  
+  <section id="stream" class="clearfix">
+   <div class="container">
+    <div class="row">
+	 <div class="stream clearfix">
+	  <div class="col-sm-9 stream_left clearfix">
+	   <div class="stream_left_inner">
+	    <h2><a href="#"><i class="fa fa-book"></i>SO WHAT!</a></h2>
+	   </div>
+	  </div>
+	  <div class="col-sm-3 stream_right clearfix">
+	   <div class="stream_right_inner">
+	    <h5><a href="#">view all <i class="fa fa-arrow-circle-right"></i></a></h5>
+	   </div>
+	  </div>
+	 </div>
+	</div>
+   </div>
+  </section>
+  
+  <section id="offically" class="clearfix">
+   <div class="container">
+    <div class="row">
+	 <div class="offically clearfix">
+	  <div class="col-sm-7 offically_left clearfix">
+	   <div class="offically_left_inner">
+	    <div class="news_left_inner_main_1 clearfix">
+		 <div class="grid clearfix">
+					<figure class="effect-jazz">
+						<img src="img/52.jpg" alt="img25">
+						<figcaption>
+							<a href="#">View more</a>						</figcaption>			
+		  </figure>
+					
+	  </div>
+		</div>
+	   </div>
+	  </div>
+	  <div class="col-sm-5 offically_right clearfix">
+	   <div class="offically_right_inner">
+	    <h4><a href="#">TELLUS SED AUGUE SEMPER PORTA NAURIS MASSA VESTIBULUM LACINIA ARCU</a></h4>
+		<h3>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos C. Curabitursodales ligula in libero. Sed dignissim lacinia nunc nec odionec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi Nulla. </h3>
+		<h5>Jul 15, 2017 / Inceptos GW! <span class="pull-right"><a href="#">more <i class="fa fa-arrow-circle-o-right"></i></a></span></h5>
+	   </div>
+	  </div>
+	 </div>
+	</div>
+   </div>
+  </section>
+  
+  <section id="stream" class="clearfix">
+   <div class="container">
+    <div class="row">
+	 <div class="stream clearfix">
+	  <div class="col-sm-9 stream_left clearfix">
+	   <div class="stream_left_inner">
+	    <h2><a href="#"><i class="fa fa-magnet"></i>RESIDENTIAL</a></h2>
+	   </div>
+	  </div>
+	  <div class="col-sm-3 stream_right clearfix">
+	   <div class="stream_right_inner">
+	    <h5><a href="#">view all <i class="fa fa-arrow-circle-right"></i></a></h5>
+	   </div>
+	  </div>
+	 </div>
+	</div>
+   </div>
+  </section>
+  
+  <section id="comunity" class="clearfix">
+   <div class="container">
+    <div class="row">
+	 <div class="comunity clearfix">
+	  <div class="col-sm-3 comunity_left clearfix">
+	   <h2><a href="#">TACITI</a></h2>
+	   <ul class="topper_1">
+	    <li><p><a href="#">Porta & Perinceptos</a></p></li>
+		<li><h5><a href="#">6 POSTS</a></h5></li>
+	   </ul>
+	   <ul>
+	    <li><p><a href="#">Anything Euphony</a></p></li>
+		<li><h5><a href="#">3615 POSTS</a></h5></li>
+	   </ul>
+	   <ul>
+	    <li><p><a href="#">Praesent</a></p></li>
+		<li><h5><a href="#">2125 POSTS</a></h5></li>
+	   </ul>
+	   <ul>
+	    <li><p><a href="#">The Euphony Arcu</a></p></li>
+		<li><h5><a href="#">725 POSTS</a></h5></li>
+	   </ul>
+	   <ul>
+	    <li><p><a href="#">The Euphony Eget</a></p></li>
+		<li><h5><a href="#">249 POSTS</a></h5></li>
+	   </ul>
+	   <ul>
+	    <li><p><a href="#">Local Chapters</a></p></li>
+		<li><h5><a href="#">139 POSTS</a></h5></li>
+	   </ul>
+	   <ul>
+	    <li><p><a href="#">Adipiscing & Lacinia</a></p></li>
+		<li><h5><a href="#">529 POSTS</a></h5></li>
+	   </ul>
+	   <ul>
+	    <li><p><a href="#">Nulla quis sem nibh</a></p></li>
+		<li><h5><a href="#">821 POSTS</a></h5></li>
+	   </ul>
+	   <ul>
+	    <li><p><a href="#">Torquent Per Semper</a></p></li>
+		<li><h5><a href="#">2725 POSTS</a></h5></li>
+	   </ul>
+	   </div>
+	  <div class="col-sm-6 comunity_middle clearfix">
+	   <h2><a href="#">ANYTHING EUPHONY</a></h2>
+	   <div class="comunity_middle_inner clearfix">
+	    <div class="col-sm-1 studio_left clearfix">
+		 <div class="studio_left_inner">
+		  <h5><a href="#"><img src="img/53.jpg" class="img-circle" /></a></h5>
+		 </div>
+		</div>
+		<div class="col-sm-8 studio_middle clearfix">
+		 <div class="studio_middle_iner">
+		  <h4><a href="#">Fusce tellus sed augue semper...</a></h4>
+		  <h5>Last post 19 minutes ago</h5>
+		 </div>
+		</div>
+		<div class="col-sm-3 studio_right clearfix">
+		 <div class="studio_right_inner">
+		  <ul>
+		   <li><a href="#"><i class="fa fa-heart"></i>20</a></li>
+		   <li><a href="#"><i class="fa fa-comment"></i>19</a></li>
+		  </ul>
+		 </div>
+		</div>
+	   </div>
+	   <div class="comunity_middle_inner clearfix">
+	    <div class="col-sm-1 studio_left clearfix">
+		 <div class="studio_left_inner">
+		  <h5><a href="#"><img src="img/54.jpg" class="img-circle" /></a></h5>
+		 </div>
+		</div>
+		<div class="col-sm-8 studio_middle clearfix">
+		 <div class="studio_middle_iner">
+		  <h4><a href="#">Lorem ipsum dolor sit amet, consectetur?</a></h4>
+		  <h5>Last post 12 minutes ago orion289</h5>
+		 </div>
+		</div>
+		<div class="col-sm-3 studio_right clearfix">
+		 <div class="studio_right_inner">
+		  <ul>
+		   <li><a href="#"><i class="fa fa-heart"></i>41</a></li>
+		   <li><a href="#"><i class="fa fa-comment"></i>47</a></li>
+		  </ul>
+		 </div>
+		</div>
+	   </div>
+	   <div class="comunity_middle_inner clearfix">
+	    <div class="col-sm-1 studio_left clearfix">
+		 <div class="studio_left_inner">
+		  <h5><a href="#"><img src="img/55.jpg" class="img-circle" /></a></h5>
+		 </div>
+		</div>
+		<div class="col-sm-8 studio_middle clearfix">
+		 <div class="studio_middle_iner">
+		  <h4><a href="#">Nulla quis sem at nibh elementum</a></h4>
+		  <h5>Last post 1 hours ago vestibulum</h5>
+		 </div>
+		</div>
+		<div class="col-sm-3 studio_right clearfix">
+		 <div class="studio_right_inner">
+		  <ul>
+		   <li><a href="#"><i class="fa fa-heart"></i>62</a></li>
+		   <li><a href="#"><i class="fa fa-comment"></i>82</a></li>
+		  </ul>
+		 </div>
+		</div>
+	   </div>
+	   <div class="comunity_middle_inner clearfix">
+	    <div class="col-sm-1 studio_left clearfix">
+		 <div class="studio_left_inner">
+		  <h5><a href="#"><img src="img/56.jpg" class="img-circle" /></a></h5>
+		 </div>
+		</div>
+		<div class="col-sm-8 studio_middle clearfix">
+		 <div class="studio_middle_iner">
+		  <h4><a href="#">At nibh elementum imperdiet sagittis</a></h4>
+		  <h5>Last post 3 hours ago sagittis1990</h5>
+		 </div>
+		</div>
+		<div class="col-sm-3 studio_right clearfix">
+		 <div class="studio_right_inner">
+		  <ul>
+		   <li><a href="#"><i class="fa fa-heart"></i>32</a></li>
+		   <li><a href="#"><i class="fa fa-comment"></i>9</a></li>
+		  </ul>
+		 </div>
+		</div>
+	   </div>
+	   <div class="comunity_middle_inner clearfix">
+	    <div class="col-sm-1 studio_left clearfix">
+		 <div class="studio_left_inner">
+		  <h5><a href="#"><img src="img/57.jpg" class="img-circle" /></a></h5>
+		 </div>
+		</div>
+		<div class="col-sm-8 studio_middle clearfix">
+		 <div class="studio_middle_iner">
+		  <h4><a href="#">Cursus ante dapibus diam Sed.</a></h4>
+		  <h5>Last post 16 hours ago mark7671</h5>
+		 </div>
+		</div>
+		<div class="col-sm-3 studio_right clearfix">
+		 <div class="studio_right_inner">
+		  <ul>
+		   <li><a href="#"><i class="fa fa-heart"></i>66</a></li>
+		   <li><a href="#"><i class="fa fa-comment"></i>38</a></li>
+		  </ul>
+		 </div>
+		</div>
+	   </div>
+	   <div class="comunity_middle_inner clearfix">
+	    <div class="col-sm-1 studio_left clearfix">
+		 <div class="studio_left_inner">
+		  <h5><a href="#"><img src="img/58.jpg" class="img-circle" /></a></h5>
+		 </div>
+		</div>
+		<div class="col-sm-8 studio_middle clearfix">
+		 <div class="studio_middle_iner">
+		  <h4><a href="#">odionec odio - YWEWUY Porta 2.6 - THE AUGUE IPSUM</a></h4>
+		  <h5>Last post 11 hours ago lorinastf</h5>
+		 </div>
+		</div>
+		<div class="col-sm-3 studio_right clearfix">
+		 <div class="studio_right_inner">
+		  <ul>
+		   <li><a href="#"><i class="fa fa-heart"></i>52</a></li>
+		   <li><a href="#"><i class="fa fa-comment"></i>84</a></li>
+		  </ul>
+		 </div>
+		</div>
+	   </div>
+	   <div class="comunity_middle_inner clearfix">
+	    <div class="col-sm-1 studio_left clearfix">
+		 <div class="studio_left_inner">
+		  <h5><a href="#"><img src="img/59.jpg" class="img-circle" /></a></h5>
+		 </div>
+		</div>
+		<div class="col-sm-8 studio_middle clearfix">
+		 <div class="studio_middle_iner">
+		  <h4><a href="#">The "Elementum...To augue "semper: - porta III</a></h4>
+		  <h5>Last post 21 minutes ago litoraipsum</h5>
+		 </div>
+		</div>
+		<div class="col-sm-3 studio_right clearfix">
+		 <div class="studio_right_inner">
+		  <ul>
+		   <li><a href="#"><i class="fa fa-heart"></i>22</a></li>
+		   <li><a href="#"><i class="fa fa-comment"></i>34</a></li>
+		  </ul>
+		 </div>
+		</div>
+	   </div>
+	   <div class="comunity_middle_inner clearfix">
+	    <div class="col-sm-1 studio_left clearfix">
+		 <div class="studio_left_inner">
+		  <h5><a href="#"><img src="img/60.jpg" class="img-circle" /></a></h5>
+		 </div>
+		</div>
+		<div class="col-sm-8 studio_middle clearfix">
+		 <div class="studio_middle_iner">
+		  <h4><a href="#"> Amet, consectetur adipiscing...</a></h4>
+		  <h5>Last post 17 minutes ago</h5>
+		 </div>
+		</div>
+		<div class="col-sm-3 studio_right clearfix">
+		 <div class="studio_right_inner">
+		  <ul>
+		   <li><a href="#"><i class="fa fa-heart"></i>26</a></li>
+		   <li><a href="#"><i class="fa fa-comment"></i>26</a></li>
+		  </ul>
+		 </div>
+		</div>
+	   </div>
+	   <div class="comunity_middle_inner clearfix">
+	    <div class="col-sm-1 studio_left clearfix">
+		 <div class="studio_left_inner">
+		  <h5><a href="#"><img src="img/61.jpg" class="img-circle" /></a></h5>
+		 </div>
+		</div>
+		<div class="col-sm-8 studio_middle clearfix">
+		 <div class="studio_middle_iner">
+		  <h4><a href="#">Duis sagittis ipsum Mauris  0.7 - PRAESENT LIBERO</a></h4>
+		  <h5>Last post 16 hours ago duissagittis</h5>
+		 </div>
+		</div>
+		<div class="col-sm-3 studio_right clearfix">
+		 <div class="studio_right_inner">
+		  <ul>
+		   <li><a href="#"><i class="fa fa-heart"></i>32</a></li>
+		   <li><a href="#"><i class="fa fa-comment"></i>82</a></li>
+		  </ul>
+		 </div>
+		</div>
+	   </div>
+	   <div class="comunity_middle_inner_2 clearfix">
+	    <p><a href="#">read more<i class="fa fa-arrow-circle-o-right"></i></a></p>
+	   </div>
+	  </div>
+	  <div class="col-sm-3 comunity_middle clearfix">
+	   <h2><a href="#">THE EUPHONY EGET</a></h2>
+	   <div class="comunity_middle_inner clearfix">
+	    <div class="col-sm-2 studio_left clearfix">
+		 <div class="studio_left_inner">
+		  <h5><a href="#"><img src="img/53.jpg" class="img-circle" /></a></h5>
+		 </div>
+		</div>
+		<div class="col-sm-10 studio_middle clearfix">
+		 <div class="studio_middle_iner">
+		  <h4><a href="#">Lorem ipsum dolor sit amet...</a></h4>
+		  <h5>Last post 27 minutes ago</h5>
+		 </div>
+		</div>
+	   </div>
+	   <div class="comunity_middle_inner clearfix">
+	    <div class="col-sm-2 studio_left clearfix">
+		 <div class="studio_left_inner">
+		  <h5><a href="#"><img src="img/54.jpg" class="img-circle" /></a></h5>
+		 </div>
+		</div>
+		<div class="col-sm-10 studio_middle clearfix">
+		 <div class="studio_middle_iner">
+		  <h4><a href="#">The "Elementum...To augue "semper: - porta III?</a></h4>
+		  <h5>Last post 42 minutes ago nariyan764</h5>
+		 </div>
+		</div>
+	   </div>
+	   <div class="comunity_middle_inner clearfix">
+	    <div class="col-sm-2 studio_left clearfix">
+		 <div class="studio_left_inner">
+		  <h5><a href="#"><img src="img/55.jpg" class="img-circle" /></a></h5>
+		 </div>
+		</div>
+		<div class="col-sm-10 studio_middle clearfix">
+		 <div class="studio_middle_iner">
+		  <h4><a href="#"> Amet, consectetur adipiscing...</a></h4>
+		  <h5>Last post 2 hours ago litoraipsum</h5>
+		 </div>
+		</div>
+	   </div>
+	   <div class="comunity_middle_inner clearfix">
+	    <div class="col-sm-2 studio_left clearfix">
+		 <div class="studio_left_inner">
+		  <h5><a href="#"><img src="img/56.jpg" class="img-circle" /></a></h5>
+		 </div>
+		</div>
+		<div class="col-sm-10 studio_middle clearfix">
+		 <div class="studio_middle_iner">
+		  <h4><a href="#">No Hetfield at Acoustic-4-A-Cure again</a></h4>
+		  <h5>Last post 6 hours ago docvader1984</h5>
+		 </div>
+		</div>
+	   </div>
+	   <div class="comunity_middle_inner clearfix">
+	    <div class="col-sm-2 studio_left clearfix">
+		 <div class="studio_left_inner">
+		  <h5><a href="#"><img src="img/57.jpg" class="img-circle" /></a></h5>
+		 </div>
+		</div>
+		<div class="col-sm-10 studio_middle clearfix">
+		 <div class="studio_middle_iner">
+		  <h4><a href="#">Cursus ante dapibus diam Sed..</a></h4>
+		  <h5>Last post 13 hours ago maker8271</h5>
+		 </div>
+		</div>
+	   </div>
+	   <div class="comunity_middle_inner clearfix">
+	    <div class="col-sm-2 studio_left clearfix">
+		 <div class="studio_left_inner">
+		  <h5><a href="#"><img src="img/58.jpg" class="img-circle" /></a></h5>
+		 </div>
+		</div>
+		<div class="col-sm-10 studio_middle clearfix">
+		 <div class="studio_middle_iner">
+		  <h4><a href="#">Fusce tellus sed augue semper...</a></h4>
+		  <h5>Last post 16 hours ago mrpappagiorgio</h5>
+		 </div>
+		</div>
+	   </div>
+	   <div class="comunity_middle_inner_2 clearfix">
+	    <p><a href="#">read more<i class="fa fa-arrow-circle-o-right"></i></a></p>
+	   </div>
+	  </div>
+	  </div>
+	 </div>
+	</div>
+   </div>
+  </section>
+  
+  <section id="stream" class="clearfix">
+   <div class="container">
+    <div class="row">
+	 <div class="stream clearfix">
+	  <div class="col-sm-9 stream_left clearfix">
+	   <div class="stream_left_inner">
+	    <h2><a href="#"><i class="fa fa-star-o"></i>CONTENT</a></h2>
+	   </div>
+	  </div>
+	  <div class="col-sm-3 stream_right clearfix">
+	   <div class="stream_right_inner">
+	    <h5><a href="#">view all <i class="fa fa-arrow-circle-right"></i></a></h5>
+	   </div>
+	  </div>
+	 </div>
+	</div>
+   </div>
+  </section>
+  
+  <section id="schedule" class="clearfix">
+   <div class="container">
+    <div class="row">
+	 <div class="schedule clearfix">
+	  <div class="schedule_top clearfix">
+	    <h2>Turn Content Schedule</h2>
+		<hr class="hr_1">
+		<h4>Libero March 18 - Jul 25 2017</h4>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer  nec Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum by end of day on Thursday, March 22.</p>
+		<h2>**Nulla sem porta**</h2>
+		<h2>**Sed cursus ante dapibus diam. Sed nisi Nulla before Friday, March 15 at 10 AM Pacific Time**</h2>
+		<h3>North Koria Oct - Dec 2017</h3>
+		<p>Arcu to be adipiscing August 2017</p>
+		<h3>North Koria Jul - August 2018</h3>
+		<p>Arcu to be adipiscing March 2018</p>
+		<p>***augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.****</p>
+		<p>****SED DIGNISSIM LACINIA NUNC****</p>
+	  </div>
+	  <div class="schedule_bottom clearfix">
+	   <div class="col-sm-3 schedule_bottom_left clearfix">
+	    <div class="schedule_bottom_left_inner">
+		 <h2><a href="#">AMET & NULLA: MARCH 15, 2017 - MAURIS, SPAIN</a></h2>
+		 <p>Taciti sociosqu ad litora torquent per conubia nostra, per  on March 15, 2017 - MAURIS, SPAIN.</p>
+		 <p>Fusce nec tellus sed augue semper, March 15 at 7 AM Pacific Time until Thursday, March 19 at 8 AM Pacific Time.</p>
+		 <h4><a href="#">IPSUM</a></h4>
+		</div>
+	   </div>
+	   <div class="col-sm-3 schedule_bottom_left clearfix">
+	    <div class="schedule_bottom_left_inner">
+		 <h2><a href="#">ARCU & PORTA: MARCH 09, 2017 - MAURIS, SPAIN</a></h2>
+		 <p>Taciti sociosqu ad litora torquent per conubia nostra, per  on March 15, 2017 - MAURIS, SPAIN.</p>
+		 <p>Fusce nec tellus sed augue semper, March 15 at 7 AM Pacific Time until Thursday, March 19 at 8 AM Pacific Time.</p>
+		 <h4><a href="#">IPSUM</a></h4>
+		</div>
+	   </div>
+	   <div class="col-sm-3 schedule_bottom_left clearfix">
+	    <div class="schedule_bottom_left_inner">
+		 <h2><a href="#">INTEGER & ODIO: MARCH 28, 2017 - MAURIS, SPAIN</a></h2>
+		 <p>Taciti sociosqu ad litora torquent per conubia nostra, per  on March 15, 2017 - MAURIS, SPAIN.</p>
+		 <p>Fusce nec tellus sed augue semper, March 15 at 7 AM Pacific Time until Thursday, March 19 at 8 AM Pacific Time.</p>
+		 <h4><a href="#">IPSUM</a></h4>
+		</div>
+	   </div>
+	   <div class="col-sm-3 schedule_bottom_left clearfix">
+	    <div class="schedule_bottom_left_inner">
+		 <h2><a href="#">MEET & GREET: MARCH 30, 2017 - MAURIS, SPAIN</a></h2>
+		 <p>Taciti sociosqu ad litora torquent per conubia nostra, per  on March 15, 2017 - MAURIS, SPAIN.</p>
+		 <p>Fusce nec tellus sed augue semper, March 15 at 7 AM Pacific Time until Thursday, March 19 at 8 AM Pacific Time.</p>
+		 <h4><a href="#">IPSUM</a></h4>
+		</div>
+	   </div>
+	  </div>
+	 </div>
+	</div>
+   </div>
+  </section>
+  
+  <section id="footer" class="clearfix">
+   <div class="container">
+    <div class="row">
+	 <div class="footer clearfix">
+	  <div class="col-sm-3 footer_left clearfix">
+	   <div class="footer_left_inner">
+	    <ul class="social-network social-circle">
+					    <li><a href="#" class="icoFacebook ico_tab" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#" class="icoTwitter ico_tab" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#" class="icoTwitter ico_tab" title="instagram"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="#" class="icoTwitter ico_tab" title="snapchat"><i class="fa fa-snapchat"></i></a></li>
+                        <li><a href="#" class="icoRss ico_tab" title="Rss"><i class="fa fa-rss"></i></a></li>
+                    </ul>
+	   </div>
+	  </div>
+	  <div class="col-sm-6 footer_middle clearfix">
+	   <div class="footer_middle_inner">
+	    <h2><a href="#"><span class="spl_tab">E</span>UPHON<span class="spl_tab">Y</span></a></h2>
+		<ul>
+		 <li><a href="#">HELP</a></li>
+		 <li><a href="#">CREDITS</a></li>
+		</ul>
+		<ul>
+		 <li><a href="#">TERMS OF USE</a></li>
+		 <li><a href="#">PRIVACY POLICY</a></li>
+		</ul>
+		<ul>
+		 <li><a href="#">FUSCE NEC TELLUS SED AUGUE</a></li>
+		</ul>
+		<ul>
+		 <li><a href="#">© EUPHON</a></li>
+		 <li><a href="#">© DIGNISSIM ADIPISCING</a></li>
+		</ul>
+		<h4><a href="#"><i>D</i>IGNISSIM<span class="ending_part">Dignissimed Vestibulum™"</span></a></h4>
+		<p class="website">© 2013 Your Website Name. All rights reserved | Design by<a href="http://www.templateonweb.com"> TemplateOnWeb</a></p>
+	   </div>
+	  </div>
+	  <div class="col-sm-3 footer_left clearfix">
+	   <div class="footer_left_inner">
+	    <ul class="social-network social-circle">
+                        <li><a href="#" class="icoFacebook ico_tab" title="pinterest"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="#" class="icoTwitter ico_tab" title="apple"><i class="fa fa-apple"></i></a></li>
+                        <li><a href="#" class="icoGoogle ico_tab" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="#" class="icoGoogle ico_tab" title="cloud"><i class="fa fa-cloud"></i></a></li>
+                        <li><a href="#" class="icoLinkedin ico_tab" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+	   </div>
+	  </div>
+	 </div>
+	</div>
+   </div>
+  </section>
+  
+</body>
+</html>

@@ -1,0 +1,134 @@
+{% extends 'custom_auth/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="container-fluid mt-5" style="text-align:center;" xmlns="http://www.w3.org/1999/html"
+     xmlns="http://www.w3.org/1999/html">
+
+          <div id="carouselExampleIndicators" class="carousel slide m-4" data-bs-ride="carousel ">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+<!--              <div class="carousel-inner">-->
+<!--                <div class="carousel-item active">-->
+<!--                  <img src="{% static 'store/images/img_6.png' %}" class="d-block " alt="..." width="100%" height="700px">-->
+<!--                </div>-->
+<!--                <div class="carousel-item">-->
+<!--                  <img src="{% static 'store/images/img_5.png' %}" class="d-block " alt="..." width="100%" height="700px">-->
+<!--                </div>-->
+<!--                <div class="carousel-item">-->
+<!--                  <img src="{% static 'store/images/img_4.png' %}" class="d-block " alt="..." width="100%" height="700px">-->
+<!--                </div>-->
+<!--              </div>-->
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+          </div>
+
+      <div class="row mt-5">
+
+<!--          filter-->
+            <div class="col-lg-3 mx-auto">
+                <div class="list-group">
+                  <a href="{% url 'web_auth:index' %}" class="list-group-item list-group-item-action ">All Categories</a></br>
+                    {% for category in categories %}
+                        <a href="./index?category={{category.id}}" class="list-group-item list-group-item-action ">{{ category.name }}</br>
+                        <img  src="{{category.post.url}}"  alt="dress" style="width: 10rem; height:6rem; "></a>
+                    {% endfor %}
+                </div>
+            </div>
+<!--        products-->
+          <div id="products" class="col-lg-8 mx-auto mt-2">
+                <div class="row mx-auto">
+                   <h1>All Videos</h1>
+                {% for p in products %}
+                      <div class="card mx-auto mb-1 mt-2" id={{p.id}} style="width: 18rem;">
+
+                              <h5 class="card-title mt-2">{{ p.name }}</h5>
+                              <video height="200"  controls>
+                                  <source src="{{p.post.url}}" type="video/mp4" />
+                              </video>
+    <!--                    <img class="card-img-top" src="{{p.post.url}}" class="card-img-top" alt="dress">-->
+                          <div class="card-body">
+                              </br>
+                              <h6 class="card-title">{{ p.description }}</h6>
+                          </div>
+                      </div>
+                  {% endfor %}
+                </div>
+            </div>
+
+          <div id="new_release" class="col-lg-8 mx-auto mt-2">
+                <div class="row mx-auto">
+                   <h1>New Release Videos</h1>
+                {% for p in new_release %}
+                  <div class="card mx-auto mb-1 mt-2" id={{p.id}} style="width: 18rem;">
+                      <h5 class="card-title mt-2">{{ p.name }}</h5>
+                      <video height="200"  controls>
+                          <source src="{{p.post.url}}" type="video/mp4" />
+                      </video>
+<!--                    <img class="card-img-top" src="{{p.post.url}}" class="card-img-top" alt="dress">-->
+                    <div class="card-body">
+
+                        </br>
+                      <h6 class="card-title">{{ p.description }}</h6>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+          </div>
+
+          <div id="favourite" class="col-lg-8 mx-auto mt-2">
+                <div class="row mx-auto">
+                <h1>Favourite</h1>
+                {% for favourite in favourite %}
+                  <div class="card mx-auto mb-1 mt-2" id={{favourite.post.id}} style="width: 18rem;">
+                      <h5 class="card-title mt-2">{{ favourite.post.name }}</h5>
+                      <video height="200"  controls>
+                          <source src="{{ favourite.post.post.url }}" type="video/mp4" />
+                      </video>
+<!--                    <img class="card-img-top" src="{{favourite.post.post.url}}" class="card-img-top" alt="dress">-->
+                    <div class="card-body">
+                        </br>
+                      <h6 class="card-title">{{ favourite.post.description }}</h6>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+            </div>
+
+          <div id="popular" class="col-lg-8 mx-auto mt-2">
+                <div class="row mx-auto">
+                <h1>Populars</h1>
+                {% for pop in popular %}
+                  <div class="card mx-auto mb-1 mt-2" id={{pop.id}} style="width: 18rem;">
+                      <h5 class="card-title mt-2">{{ pop.name }}</h5>
+                      <video height="200"  controls>
+                          <source src="{{pop.post.url}}" type="video/mp4" />
+                      </video>
+<!--                    <img class="card-img-top" src="{{pop.post.url}}" class="card-img-top" alt="dress">-->
+                    <div class="card-body">
+
+                        </br>
+                      <h6 class="card-title">{{ pop.description }}</h6>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+            </div>
+
+
+
+      </div>
+    </div>
+
+{% endblock %}
+

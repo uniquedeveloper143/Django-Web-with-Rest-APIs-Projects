@@ -1,0 +1,57 @@
+{% extends 'custom_auth/base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+    <div class="p-4 m-4">
+        <div class="col-lg-6 mx-auto border rounded p-4">
+            <h3 class="alert alert-light border rounded ">Create An Account</h3>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+<!--                <table>{{ form.as_table }}</table>-->
+                <button class="form-control btn-sm btn btn-info" id="sub">Sign in</button>
+<!--                {% if error %}-->
+<!--                <div class="alert alert-danger" role="alert">-->
+<!--                    {{ error }}-->
+<!--                </div>-->
+<!--                {% endif %}-->
+<!--              <div class="form-group">-->
+<!--                <label for="f_name">First Name</label>-->
+<!--                <input type="text" class="form-control" id="f_name" placeholder="First Name" name="f_name" value="{{values.f_name}}">-->
+<!--              </div>-->
+<!--                <br/>-->
+<!--              <div class="form-group">-->
+<!--                <label for="l_name">Last Name</label>-->
+<!--                <input type="text" class="form-control" id="l_name" placeholder="Last Name" name="l_name"value="{{values.l_name}}">-->
+<!--              </div>-->
+<!--                 <br/>-->
+<!--              <div class="form-group">-->
+<!--                <label for="phone">Mobile</label>-->
+<!--                <input type="number" class="form-control" id="phone" placeholder="Mobile" name="phone" value="{{values.phone}}">-->
+<!--              </div>-->
+<!--                 <br/>-->
+<!--              <div class="form-group">-->
+<!--                <label for="email">Email ID</label>-->
+<!--                <input type="text" class="form-control" id="email" placeholder="Email ID" name="email" value="{{values.email}}">-->
+<!--              </div>-->
+<!--                 <br/>-->
+<!--              <div class="form-group">-->
+<!--                <label for="password">Password</label>-->
+<!--                <input type="text" class="form-control" id="password" placeholder="********" name="password" >-->
+<!--              </div>-->
+<!--                 <br/>-->
+<!--              <div class="form-group">-->
+<!--                <input type="submit" class="form-control btn-sm btn btn-info" id="sub" name="sub" value="Click to Register">-->
+<!--              </div>-->
+<!--              <div class="form-group">-->
+<!--                <label for="cpass">Confirm Password</label>-->
+<!--                <input type="text" class="form-control" id="cpass" placeholder="Confirm Password" name="cpass">-->
+<!--              </div>-->
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
