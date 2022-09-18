@@ -1,0 +1,72 @@
+{% extends 'custom_auth/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="text-center p-4 m-4" xmlns="http://www.w3.org/1999/html">My All Foods</h1>
+
+    <div class="container p-2">
+        <div class="row mx-auto">
+            {% for foods in food %}
+                <div class="col-sm-4 cal">
+                  <div class=" mx-auto mb-1 mt-4 border-rounded" id={{restaurant.id}} style="width: 20rem; height:18rem;">
+                      <a href="./selected_food?food={{foods.id}}">
+                           <img src="{{foods.food_image.url}}" style="width: 100%; height:18rem;" class="rounded" alt="dress" >
+                           <input type="hidden"  class="food_id" value="{{foods.id}}">
+                      </a>
+                  </div>
+                    <div class="mx-auto mb-1 ">
+                        {% for favorites in foods.food_favorite_details.all %}
+
+                            {% if favorites.favorite_food == True %}
+                                <h4 class=" mt-2 text-center">{{ foods.food_name }}<span style="margin-left:25px; font-size:25px;"><i class='fa-solid fa-heart' style='color: red'></i></span></h4>
+                            {% else %}
+                                <h4 class=" mt-2 text-center">{{ foods.food_name }}<span style="margin-left:25px; font-size:22px;"><i class='fa-solid fa-heart' style='color: grey'></i></span></h4>
+                            {% endif %}
+                        {% empty %}
+                                <h4 class=" mt-2 text-center">{{ foods.food_name }}<span style="margin-left:25px; font-size:22px;"><i class='fa-solid fa-heart' style='color: grey'></i></span></h4>
+                        {% endfor %}
+                        <div class="mx-auto mb-1 mt-3">
+                         <div class="row"  style="font-size:25px; color:grey;">
+                                <div class="col-sm-4">
+                                  <p><i class='far fa-star' style='color:green; margin-right:5px;'></i>  {{foods.avg_rating|floatformat:1}}</p>
+                                </div>
+
+                            <div class="col-sm-4">
+                              <p><i class='fas fa-truck' style='color:green; margin-right:5px;'></i>  {{foods.delivery_type}}</p>
+                            </div>
+                            <div class="col-sm-4">
+                              <p><i class='far fa-clock' style='color:green; margin-right:5px;'></i>  {{foods.delivery_time|time:"i"}} Min</p>
+                            </div>
+                         </div>
+                       </div>
+
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+<script>
+$(document).ready(function(){
+     $(".fa-heart").click(function(){
+
+<!--            var food_id = $(".food_id").val();-->
+            var food_id =  $(this).closest(".cal").find(".food_id").val();
+            $.ajax({
+             method: "POST",
+             url: "{% url 'web_auth:like_food' %}",
+             data: {
+                    'food_id': food_id,
+                    csrfmiddlewaretoken: '{{csrf_token}}'
+                }
+              });
+
+             alert("Your response added Successfully!" )
+    });
+});
+
+</script>
+
+
+{% endblock content %}

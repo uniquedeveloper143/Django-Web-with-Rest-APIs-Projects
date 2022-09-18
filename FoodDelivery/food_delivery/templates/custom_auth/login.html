@@ -1,0 +1,33 @@
+{% extends 'custom_auth/base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+    <div class="p-4 m-4">
+        <div class="col-lg-6 mx-auto border rounded p-4">
+            <h3 class="alert alert-success text-center border rounded">Login to Access</h3>
+            <form method="POST">
+
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endif %}
+                {% csrf_token %}
+                {{ form|crispy }}
+                 <br/>
+              <div class="form-group">
+                  <button class="form-control btn-sm btn btn-info p-1" id="sub">Click to Login</button>
+<!--                <input type="submit" class="form-control btn-sm btn btn-info" id="sub" name="sub" value="Click to Login ">-->
+              </div>
+                <br/>
+              <div class="form-group">
+                  <a class="form-control btn-sm btn btn-info" href="{% url 'web_auth:forgot'%}">Forgot Password</a>
+              </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

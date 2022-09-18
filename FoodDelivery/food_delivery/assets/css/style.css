@@ -1,0 +1,35 @@
+nav li a{
+border-radius:5px;
+margin-left: 10px;
+background-color: rgb(45, 238, 103);
+color: rgb(46, 206, 14);
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a:hover{
+    color: #fff;
+    background-color: chocolate;
+    font-size: 20px;
+    font-weight: 5px;
+    font-style: oblique;
+}
+
+.navbar-brand{
+    color: rgb(247, 235, 173);
+    background-color: rgb(46, 2, 44);
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 25;
+}
+.btn{
+    background-color: coral;
+    color: chartreuse;
+}
+
+.food_size{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px;
+    border: grey;
+}

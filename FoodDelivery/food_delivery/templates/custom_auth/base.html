@@ -1,0 +1,310 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Base File</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!--This is use for local fontawesome css-->
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+        <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-primary mb-5">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Food Delivery</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'web_auth:index' %}">Home</a>
+            </li>
+            {% if not request.session.user %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'web_auth:login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="{% url 'web_auth:register' %}">Register</a>
+            </li>
+
+<!--            <li class="nav-item dropdown">-->
+<!--              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" >-->
+<!--                Dropdown-->
+<!--              </a>-->
+<!--              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                <li><a class="dropdown-item" href="#">Action</a></li>-->
+<!--                <li><a class="dropdown-item" href="#">Another action</a></li>-->
+<!--                <li><hr class="dropdown-divider"></li>-->
+<!--                <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+<!--              </ul>-->
+<!--            </li>-->
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link " href="{% url 'web_auth:logout' %}">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link ">{{request.user}} </a>
+            </li>
+            {% endif %}
+          </ul>
+          <form class="d-flex" role="search">
+            <div class="me-4 bg-warning p-2 text-dark text-center cart_details" style="width:20%; height:20%; border-radius:50%;"><a href="{% url 'web_auth:cart_details' %}" class=" bg-warning  text-dark"><i class="fa fa-shopping-cart mr-1"></i> {{cart}}</a></div>
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+
+        </div>
+      </div>
+    </nav>
+
+{% block content %}
+
+{% endblock content %}
+
+<!--<div class="container my-5">-->
+  <!-- Footer -->
+  <footer
+          class="text-center text-lg-start text-white mt-5"
+          style="background-color: #3e4551"
+          >
+    <!-- Grid container -->
+    <div class="container p-4 pb-0 text-center">
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-12 col-md-6 mb-4 mb-md-0 text-center">
+            <h5 class="text-uppercase">FOOTER CONTENT</h5>
+            <hr class="mb-4" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Molestiae modi cum ipsam ad, illo possimus laborum ut
+              reiciendis obcaecati. Ducimus, quas. Corrupti, pariatur eaque?
+              Reiciendis assumenda iusto sapiente inventore animi?
+            </p>
+          </div>
+        </div>
+        <hr class="mb-4" />
+        <div class="row">
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-center">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">Link 1</a>
+              </li>
+<!--              <li>-->
+<!--                <a href="#!" class="text-white">Link 2</a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a href="#!" class="text-white">Link 3</a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a href="#!" class="text-white">Link 4</a>-->
+<!--              </li>-->
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-center">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled mb-0">
+<!--              <li>-->
+<!--                <a href="#!" class="text-white">Link 1</a>-->
+<!--              </li>-->
+              <li>
+                <a href="#!" class="text-white">Link 2</a>
+              </li>
+<!--              <li>-->
+<!--                <a href="#!" class="text-white">Link 3</a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a href="#!" class="text-white">Link 4</a>-->
+<!--              </li>-->
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-center">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled mb-0">
+<!--              <li>-->
+<!--                <a href="#!" class="text-white">Link 1</a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a href="#!" class="text-white">Link 2</a>-->
+<!--              </li>-->
+              <li>
+                <a href="#!" class="text-white">Link 3</a>
+              </li>
+<!--              <li>-->
+<!--                <a href="#!" class="text-white">Link 4</a>-->
+<!--              </li>-->
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-center">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled mb-0">
+<!--              <li>-->
+<!--                <a href="#!" class="text-white">Link 1</a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a href="#!" class="text-white">Link 2</a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a href="#!" class="text-white">Link 3</a>-->
+<!--              </li>-->
+              <li>
+                <a href="#!" class="text-white text-center">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+<!--      <hr class="mb-4" />-->
+
+<!--      &lt;!&ndash; Section: CTA &ndash;&gt;-->
+<!--      <section class="">-->
+<!--        <p class="d-flex justify-content-center align-items-center">-->
+<!--          <span class="me-3">Register for free</span>-->
+<!--          <button type="button" class="btn btn-outline-light btn-rounded">-->
+<!--            Sign up!-->
+<!--          </button>-->
+<!--        </p>-->
+<!--      </section>-->
+      <!-- Section: CTA -->
+
+      <hr class="mb-4" />
+
+      <!-- Section: Social media -->
+      <section class="mb-4 text-center">
+        <!-- Facebook -->
+        <a
+           class="btn btn-outline-light btn-floating m-1"
+           href="#!"
+           role="button"
+           ><i class="fab fa-facebook-f"></i
+          ></a>
+
+        <!-- Twitter -->
+        <a
+           class="btn btn-outline-light btn-floating m-1"
+           href="#!"
+           role="button"
+           ><i class="fab fa-twitter"></i
+          ></a>
+
+        <!-- Google -->
+        <a
+           class="btn btn-outline-light btn-floating m-1"
+           href="#!"
+           role="button"
+           ><i class="fab fa-google"></i
+          ></a>
+
+        <!-- Instagram -->
+        <a
+           class="btn btn-outline-light btn-floating m-1"
+           href="#!"
+           role="button"
+           ><i class="fab fa-instagram"></i
+          ></a>
+
+        <!-- Linkedin -->
+        <a
+           class="btn btn-outline-light btn-floating m-1"
+           href="#!"
+           role="button"
+           ><i class="fab fa-linkedin-in"></i
+          ></a>
+
+        <!-- Github -->
+        <a
+           class="btn btn-outline-light btn-floating m-1"
+           href="#!"
+           role="button"
+           ><i class="fab fa-github"></i
+          ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2022 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/"
+         >Food Delivery</a
+        >
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+<!--</div>-->
+
+<!--This is use for local fontawesome js-->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="{% static 'js/all.min.js' %}"></script>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/popper.js' %}"></script>
+<!-- End of .container -->
+    <!-- MDB -->
+<!--<script type="text/javascript" src="js/mdb.min.js"></script>-->
+<!--&lt;!&ndash; Custom scripts &ndash;&gt;-->
+<!--<script type="text/javascript" src="js/script.js"></script>-->
+
+<script>
+$(document).ready(function(){
+     $(".cart_details").click(function(){
+
+<!--            var food_id = $(".food_id").val();-->
+<!--            var food_id =  $(this).closest(".cal").find(".food_id").val();-->
+            $.ajax({
+<!--             method: "POST",-->
+<!--             url: "{% url 'web_auth:cart_details' %}",-->
+<!--             data: {-->
+<!--                    csrfmiddlewaretoken: '{{csrf_token}}'-->
+<!--                }-->
+<!--              });-->
+
+<!--             alert("Your response added Successfully!" )-->
+    });
+});
+
+</script>
+
+</body>
+</html>
